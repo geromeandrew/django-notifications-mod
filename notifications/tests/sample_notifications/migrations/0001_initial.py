@@ -42,7 +42,9 @@ class Migration(migrations.Migration):
             options={
                 'ordering': ('-timestamp',),
                 'abstract': False,
-                'index_together': {('recipient', 'unread')},
+                'indexes': [
+                    models.Index(fields=['recipient', 'unread'], name='notification_recipient_unread_idx'),
+                ],
             },
         ),
     ]

@@ -2,6 +2,7 @@
 
 from django.conf import settings
 from django.db import migrations
+from django.db import models
 
 
 class Migration(migrations.Migration):
@@ -12,8 +13,8 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterIndexTogether(
-            name='notification',
-            index_together={('recipient', 'unread')},
+        migrations.AddIndex(
+            model_name='notification',
+            index=models.Index(fields=['recipient', 'unread'], name='notification_recipient_unread_idx'),
         ),
     ]
