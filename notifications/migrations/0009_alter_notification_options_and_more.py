@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
     dependencies = [
         ("contenttypes", "0002_remove_content_type_name"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        # ("notifications", "0008_index_together_recipient_unread"),
+        ("notifications", "0008_index_together_recipient_unread"),
     ]
 
     operations = [
